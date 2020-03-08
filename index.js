@@ -11,7 +11,7 @@ const {
 } = require('./lib');
 
 const app = express();
-const { dependencies } = hostPckg;
+const { dependencies, devDependencies } = hostPckg;
 let repos = [];
 
 app.use(express.static(`${__dirname}/public`));
@@ -20,7 +20,15 @@ app.set('view engine', 'ejs');
 
 async function init() {
   try {
-    const repoUrls = await Promise.all(Object.entries(dependencies).map(getRepo));
+    const deps = {
+      ...(dependencies || {}),
+      ...(devDependencies || {}),
+    };
+
+    console.log(deps);
+    const repoUrls = await Promise.all(
+      Object.entries(deps).map(getRepo),
+    );
     repos = repoUrls
       .filter(filterEmpty)
       .filter(filterDuplicates)
