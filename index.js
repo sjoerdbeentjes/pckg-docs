@@ -3,6 +3,7 @@
 const cwd = process.cwd();
 const hostPckg = require(`${cwd}/package.json`);
 const express = require('express');
+const path = require('path');
 const fp = require('find-free-port');
 const {
   getRepo, getReadme, formatRepoData, filterDuplicates, filterEmpty, sortByName,
@@ -13,6 +14,7 @@ const { dependencies } = hostPckg;
 let repos = [];
 
 app.use(express.static(`${__dirname}/public`));
+app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
 async function init() {
