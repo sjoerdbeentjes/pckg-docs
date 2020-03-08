@@ -25,7 +25,6 @@ async function init() {
       ...(devDependencies || {}),
     };
 
-    console.log(deps);
     const repoUrls = await Promise.all(
       Object.entries(deps).map(getRepo),
     );
