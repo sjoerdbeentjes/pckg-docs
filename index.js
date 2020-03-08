@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/:user/:repo', async (req, res) => {
+app.get('/*', async (req, res) => {
   const activeRepo = req.path;
   try {
     const readmeHtml = await getReadme(activeRepo);
