@@ -1,6 +1,6 @@
 # Pkg docs 
 
-Spins up a web app which bundles all readme's of your dependencies.
+Spins up a web app which bundles all the readme's of your dependencies
 
 ## Usage
 
