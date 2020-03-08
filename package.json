@@ -1,6 +1,6 @@
 {
   "name": "rtfr",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "bin": "index.js",
@@ -9,9 +9,9 @@
     "dev": "nodemon"
   },
   "files": [
-    "views",
-    "public",
-    "lib"
+    "views/**/*",
+    "public/**/*",
+    "lib/**/*"
   ],
   "author": "",
   "license": "ISC",
