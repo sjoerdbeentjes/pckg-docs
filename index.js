@@ -61,7 +61,7 @@ app.on('ready', async () => {
   const port = await fp(5000, 6000);
 
   app.listen(port[0], () => {
-    console.log(`Listening on http://localhost:${port}`);
+    console.log(`📄 RTFR running on http://localhost:${port}`);
   });
 });
 
