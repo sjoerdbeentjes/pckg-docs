@@ -8,6 +8,11 @@
     "start": "node",
     "dev": "nodemon"
   },
+  "files": [
+    "views",
+    "public",
+    "lib"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
