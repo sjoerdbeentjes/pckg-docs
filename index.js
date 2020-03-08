@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const cwd = process.cwd();
 const hostPckg = require(`${cwd}/example-package.json`);
 const express = require('express');
