@@ -1,0 +1,20 @@
+<%- include('../partials/head'); -%>
+
+<body>
+  <nav class="sidebar">
+    <ul>
+      <% repos.forEach(repo => { %>
+        <li>
+          <a class="<%= repo.url === activeRepo ? 'active' : '' %>" href="<%= repo.url %>">
+            <span class="repo-name"><%= repo.name %></span> <span class="repo-user">(<%= repo.user %>)</span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </nav>
+
+  <main class="body markdown-body">
+    <%- readmeHtml ? readmeHtml : '' %>
+  </main>
+</body>
+
