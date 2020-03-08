@@ -5,6 +5,7 @@ const hostPckg = require(`${cwd}/package.json`);
 const express = require('express');
 const path = require('path');
 const fp = require('find-free-port');
+const open = require('open');
 const {
   getRepo, getReadme, formatRepoData, filterDuplicates, filterEmpty, sortByName,
 } = require('./lib');
@@ -59,9 +60,11 @@ app.get('/:user/:repo', async (req, res) => {
 
 app.on('ready', async () => {
   const port = await fp(5000, 6000);
+  const url = `http://localhost:${port}`;
 
   app.listen(port[0], () => {
-    console.log(`📄 RTFR running on http://localhost:${port}`);
+    console.log(`📄 RTFR running on ${url}`);
+    open(url);
   });
 });
 
