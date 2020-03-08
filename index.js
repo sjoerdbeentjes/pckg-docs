@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const cwd = process.cwd();
-const hostPckg = require(`${cwd}/example-package.json`);
+const hostPckg = require(`${cwd}/package.json`);
 const express = require('express');
 const fp = require('find-free-port');
 const {
