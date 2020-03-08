@@ -1,8 +1,9 @@
 {
-  "name": "rtfm",
+  "name": "rtfr",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "start": "node",
     "dev": "nodemon"
