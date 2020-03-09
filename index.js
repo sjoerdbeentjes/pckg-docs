@@ -70,7 +70,7 @@ app.on('ready', async () => {
   const url = `http://localhost:${port}`;
 
   app.listen(port[0], () => {
-    console.log(`📄 RTFR running on ${url}`);
+    console.log(`📄 pkg-docs running on ${url}`);
     open(url);
   });
 });
