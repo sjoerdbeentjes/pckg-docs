@@ -7,7 +7,7 @@ const path = require('path');
 const fp = require('find-free-port');
 const open = require('open');
 const {
-  getRepo, getReadme, formatRepoData, filterDuplicates, filterEmpty, sortByName,
+  getReadme, sortByName,
 } = require('./lib');
 
 const app = express();
@@ -25,14 +25,7 @@ async function init() {
       ...(devDependencies || {}),
     };
 
-    const repoUrls = await Promise.all(
-      Object.entries(deps).map(getRepo),
-    );
-    repos = repoUrls
-      .filter(filterEmpty)
-      .filter(filterDuplicates)
-      .map(formatRepoData)
-      .sort(sortByName);
+    repos = Object.keys(deps).sort(sortByName);
 
     app.emit('ready');
   } catch (error) {
@@ -48,10 +41,11 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/*', async (req, res) => {
+app.get('/:package', async (req, res) => {
   const activeRepo = req.path;
+
   try {
-    const readmeHtml = await getReadme(activeRepo);
+    const readmeHtml = await getReadme(req.params.package);
 
     res.render('pages/index', {
       activeRepo,
@@ -71,7 +65,7 @@ app.on('ready', async () => {
 
   app.listen(port[0], () => {
     console.log(`📄 pkg-docs running on ${url}`);
-    open(url);
+    // open(url);
   });
 });
 

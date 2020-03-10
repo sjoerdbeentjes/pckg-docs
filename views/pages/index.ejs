@@ -5,8 +5,8 @@
     <ul>
       <% repos.forEach(repo => { %>
         <li>
-          <a class="<%= repo.url === activeRepo ? 'active' : '' %>" href="<%= repo.url %>">
-            <span class="repo-name"><%= repo.name %></span> <span class="repo-user">(<%= repo.user %>)</span>
+          <a class="<%= repo === activeRepo ? 'active' : '' %>" href="<%= repo %>">
+            <span class="repo-name"><%= repo %></span>
           </a>
         </li>
       <% }) %>
