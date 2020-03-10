@@ -12,7 +12,7 @@ const {
 
 const app = express();
 const { dependencies, devDependencies } = hostPckg;
-let repos = [];
+let packages = [];
 
 app.use(express.static(`${__dirname}/public`));
 app.set('views', path.join(__dirname, '/views'));
@@ -25,7 +25,7 @@ async function init() {
       ...(devDependencies || {}),
     };
 
-    repos = Object.keys(deps).sort(sortByName);
+    packages = Object.keys(deps).sort(sortByName);
 
     app.emit('ready');
   } catch (error) {
@@ -35,7 +35,7 @@ async function init() {
 
 app.get('/', (req, res) => {
   res.render('pages/index', {
-    repos,
+    packages,
     readmeHtml: null,
     activePackage: null,
   });
@@ -49,7 +49,7 @@ app.get('/*', async (req, res) => {
 
     res.render('pages/index', {
       activePackage,
-      repos,
+      packages,
       readmeHtml,
     });
   } catch (error) {

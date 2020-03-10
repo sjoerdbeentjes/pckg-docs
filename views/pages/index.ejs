@@ -3,10 +3,10 @@
 <body>
   <nav class="sidebar">
     <ul>
-      <% repos.forEach(repo => { %>
+      <% packages.forEach(package => { %>
         <li>
-          <a class="<%= repo === activePackage ? 'active' : '' %>" href="<%= repo %>">
-            <span class="repo-name"><%= repo %></span>
+          <a class="<%= package === activePackage ? 'active' : '' %>" href="/<%= package %>">
+            <span class="package-name"><%= package %></span>
           </a>
         </li>
       <% }) %>
