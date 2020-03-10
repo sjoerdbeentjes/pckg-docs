@@ -5,7 +5,7 @@
     <ul>
       <% repos.forEach(repo => { %>
         <li>
-          <a class="<%= repo === activeRepo ? 'active' : '' %>" href="<%= repo %>">
+          <a class="<%= repo === activePackage ? 'active' : '' %>" href="<%= repo %>">
             <span class="repo-name"><%= repo %></span>
           </a>
         </li>

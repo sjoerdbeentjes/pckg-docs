@@ -37,18 +37,18 @@ app.get('/', (req, res) => {
   res.render('pages/index', {
     repos,
     readmeHtml: null,
-    activeRepo: null,
+    activePackage: null,
   });
 });
 
-app.get('/:package', async (req, res) => {
-  const activeRepo = req.path;
+app.get('/*', async (req, res) => {
+  const activePackage = req.path;
 
   try {
-    const readmeHtml = await getReadme(req.params.package);
+    const readmeHtml = await getReadme(activePackage.substr(1));
 
     res.render('pages/index', {
-      activeRepo,
+      activePackage,
       repos,
       readmeHtml,
     });
