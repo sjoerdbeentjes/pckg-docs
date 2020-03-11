@@ -4,6 +4,7 @@
   const searchInputEl = document.querySelector('input[type="search"]');
   const packageEls = document.querySelectorAll('.sidebar ul li');
   const storedPosition = sessionStorage.getItem(scrollKey);
+  const formEl = document.querySelector('.sidebar form');
 
   if (storedPosition) {
     sidebarEl.scrollTop = Number(storedPosition);
@@ -26,5 +27,9 @@
         packageEl.classList.add('hidden');
       }
     });
+  });
+
+  formEl.addEventListener('submit', (event) => {
+    event.preventDefault();
   });
 }());
