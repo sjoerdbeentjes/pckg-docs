@@ -2,9 +2,12 @@
 
 <body>
   <nav class="sidebar">
+    <form>
+      <input placeholder="Search" type="search" />
+    </form>
     <ul>
       <% packages.forEach(package => { %>
-        <li>
+        <li data-name="<%= package %>">
           <a class="<%= package === activePackage ? 'active' : '' %>" href="/<%= package %>">
             <span class="package-name"><%= package %></span>
           </a>
