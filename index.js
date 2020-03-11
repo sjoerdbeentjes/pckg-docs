@@ -34,11 +34,7 @@ async function init() {
 }
 
 app.get('/', (req, res) => {
-  res.render('pages/index', {
-    packages,
-    readmeHtml: null,
-    activePackage: null,
-  });
+  res.redirect(`/${packages[0]}`);
 });
 
 app.get('/*', async (req, res) => {
