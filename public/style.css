@@ -15,7 +15,7 @@ body {
 }
 
 .sidebar {
-  padding: 1rem;
+  padding: 1rem 0;
   height: 100%;
   flex: 0 0 22rem;
   border-right: 1px solid var(--grey);
@@ -29,16 +29,22 @@ body {
 }
 
 .sidebar li {
-  margin-bottom: 0.75rem;
 }
 
 .sidebar li a {
+  display: block;
   color: var(--black);
   text-decoration: none;
+  padding: 1rem 1.5rem;
+}
+
+.sidebar li a:hover {
+  background-color: #e0e0e0;
 }
 
 .sidebar li a.active {
   text-decoration: underline;
+  background-color: #f7f7f7;
 }
 
 .package-name {

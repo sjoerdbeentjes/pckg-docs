@@ -42,10 +42,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/*', async (req, res) => {
-  const activePackage = req.path;
+  const activePackage = req.path.substr(1);
 
   try {
-    const readmeHtml = await getReadme(activePackage.substr(1));
+    const readmeHtml = await getReadme(activePackage);
 
     res.render('pages/index', {
       activePackage,
