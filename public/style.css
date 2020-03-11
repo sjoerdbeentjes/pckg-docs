@@ -41,12 +41,8 @@ body {
   text-decoration: underline;
 }
 
-.repo-name {
+.package-name {
   font-weight: bold;
-}
-
-.repo-user {
-  font-weight: lighter;
 }
 
 .body {
