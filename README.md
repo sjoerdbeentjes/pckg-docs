@@ -3,7 +3,7 @@
 Bundles all your readme's into a single web app. It fetches the readme's of the packages in your projects, and transforms them into a GitHub style readable format.
 
 <p align="center">
-  <img src="./screenshot.png" alt="Screenshot">
+  <img src="https://raw.githubusercontent.com/sjoerdbeentjes/pkg-docs/master/screenshot.png" alt="Screenshot">
 </p>
 
 ## Usage
