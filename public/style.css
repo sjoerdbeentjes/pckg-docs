@@ -43,13 +43,13 @@ body {
   padding: 1rem 1.5rem;
 }
 
-.sidebar li a:hover {
-  background-color: #e0e0e0;
-}
-
 .sidebar li a.active {
   text-decoration: underline;
   background-color: #f7f7f7;
+}
+
+.sidebar li a:hover {
+  background-color: #e0e0e0;
 }
 
 .sidebar form {
