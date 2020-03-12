@@ -61,7 +61,7 @@ app.on('ready', async () => {
 
   app.listen(port[0], () => {
     console.log('\x1b[32m', `pkg-docs running on ${url}`);
-    // open(url);
+    open(url);
   });
 });
 
