@@ -8,12 +8,16 @@
     "start": "node",
     "dev": "nodemon"
   },
-  "files": [
-    "views/**/*",
-    "public/**/*",
-    "lib/**/*"
-  ],
-  "author": "",
+  "files": ["views/**/*", "public/**/*", "lib/**/*"],
+  "author": {
+    "name": "Sjoerd Beentjes",
+    "email": "mail@sjoerdbeentjes.nl",
+    "url": "https://sjoerdbeentjes.nl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjoerdbeentjes/pkg-docs"
+  },
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.0.1",
