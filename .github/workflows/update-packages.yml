@@ -1,0 +1,22 @@
+name: Update packages
+on:
+  schedule:
+  - cron: '0 10 * * *'
+
+jobs:
+  package-update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: set remote url
+      run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+    - name: package-update
+      uses: taichi/actions-package-update@master
+      env:
+        AUTHOR_EMAIL: mail@sjoerdbeentjes.nl
+        AUTHOR_NAME: Sjoerd Beentjes
+        EXECUTE: "true"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HUSKY_SKIP_HOOKS: "true"
+      with:
+        args: -u --packageFile package.json
