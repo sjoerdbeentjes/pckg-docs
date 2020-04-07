@@ -57,7 +57,7 @@ app.get('/*', async (req, res) => {
 });
 
 app.on('ready', async () => {
-  const port = [argv.port] || await fp(5000, 6000);
+  const port = argv.port ? [argv.port] : await fp(5000, 6000);
   const url = `http://localhost:${port}`;
 
   app.listen(port[0], () => {
