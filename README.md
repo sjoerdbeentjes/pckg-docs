@@ -13,3 +13,9 @@ When in the directory of your project run:
 ```bash
 npx pkg-docs
 ```
+
+## Options
+
+| option | description | default |
+|---|---|---|
+| `--port` | Specific port to run on | Available port between 5000 and 6000 |
