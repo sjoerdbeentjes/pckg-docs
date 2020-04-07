@@ -6,6 +6,7 @@ const express = require('express');
 const path = require('path');
 const fp = require('find-free-port');
 const open = require('open');
+const argv = require('yargs').argv;
 const {
   getReadme, sortByName,
 } = require('./lib');
@@ -56,7 +57,7 @@ app.get('/*', async (req, res) => {
 });
 
 app.on('ready', async () => {
-  const port = await fp(5000, 6000);
+  const port = [argv.port] || await fp(5000, 6000);
   const url = `http://localhost:${port}`;
 
   app.listen(port[0], () => {
