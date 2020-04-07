@@ -8,11 +8,7 @@
     "start": "node",
     "dev": "nodemon"
   },
-  "files": [
-    "views/**/*",
-    "public/**/*",
-    "lib/**/*"
-  ],
+  "files": ["views/**/*", "public/**/*", "lib/**/*"],
   "author": {
     "name": "Sjoerd Beentjes",
     "email": "mail@sjoerdbeentjes.nl",
@@ -24,22 +20,22 @@
   },
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.0.2",
-    "express": "^4.17.1",
-    "find-free-port": "^2.0.0",
-    "nodemon": "^2.0.2",
-    "open": "^7.0.3",
-    "remark-frontmatter": "^2.0.0",
-    "remark-gemoji": "^5.0.0",
-    "remark-gemoji-to-emoji": "^1.1.0",
-    "remark-html": "^11.0.1",
-    "remark-parse": "^8.0.0",
-    "unified": "^9.0.0",
-    "yargs": "^15.3.1"
+    "ejs": "3.0.2",
+    "express": "4.17.1",
+    "find-free-port": "2.0.0",
+    "nodemon": "2.0.2",
+    "open": "7.0.3",
+    "remark-frontmatter": "2.0.0",
+    "remark-gemoji": "5.0.0",
+    "remark-gemoji-to-emoji": "1.1.0",
+    "remark-html": "11.0.1",
+    "remark-parse": "8.0.0",
+    "unified": "9.0.0",
+    "yargs": "15.3.1"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2"
   }
 }
