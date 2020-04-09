@@ -27,7 +27,7 @@
     "ejs": "3.0.2",
     "express": "4.17.1",
     "find-free-port": "2.0.0",
-    "nodemon": "2.0.2",
+    "nodemon": "2.0.3",
     "open": "7.0.3",
     "remark-frontmatter": "2.0.0",
     "remark-gemoji": "5.0.0",
