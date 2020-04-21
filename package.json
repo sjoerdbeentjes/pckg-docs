@@ -33,7 +33,7 @@
     "remark-gemoji": "5.0.0",
     "remark-gemoji-to-emoji": "1.1.0",
     "remark-html": "11.0.1",
-    "remark-parse": "8.0.0",
+    "remark-parse": "8.0.1",
     "unified": "9.0.0",
     "yargs": "15.3.1"
   },
