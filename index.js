@@ -1,16 +1,23 @@
 #!/usr/bin/env node
+import process from 'process';
+import express from 'express';
+import path from 'path';
+import yargs from 'yargs';
+import open from 'open';
+import findFreePort from 'find-free-port';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { createRequire } from 'module';
+
+import { getReadme, sortByName } from './lib/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const require = createRequire(import.meta.url); // workaround to use 'require' for json files
 
 const cwd = process.cwd();
 const hostPckg = require(`${cwd}/package.json`);
-const express = require('express');
-const path = require('path');
-const fp = require('find-free-port');
-const open = require('open');
-const argv = require('yargs').argv;
-const {
-  getReadme, sortByName,
-} = require('./lib');
-
 const app = express();
 const { dependencies, devDependencies } = hostPckg;
 let packages = [];
@@ -57,7 +64,8 @@ app.get('/*', async (req, res) => {
 });
 
 app.on('ready', async () => {
-  const port = argv.port ? [argv.port] : await fp(5000, 6000);
+  const argv = yargs(process.argv.slice(2)).argv;
+  const port = argv.port ? [argv.port] : await findFreePort(5000, 6000);
   const url = `http://localhost:${port}`;
 
   app.listen(port[0], () => {
